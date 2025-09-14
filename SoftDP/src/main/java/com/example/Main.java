@@ -1,7 +1,5 @@
 package com.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Car car = new CarBuilder()
@@ -11,7 +9,20 @@ public class Main {
                 .setYear(2024)
                 .setHasGPS(true)
                 .build();
+        Car Elcar = new CarBuilder()
+                .setModel("Tesla")
+                .setColor("White")
+                .setEngine(new ElectricEngine())
+                .setYear(2020)
+                .setHasGPS(true)
+                .build();
 
         System.out.println(car);
+        System.out.println();
+        System.out.println(Elcar);
     }
 }
+
+
+
+
