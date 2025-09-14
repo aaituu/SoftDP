@@ -7,8 +7,8 @@ public class Main {
         Car car = new CarBuilder()
                 .setModel("BMW")
                 .setColor("Black")
-                .setYear(2024)
                 .setEngine(new SportEngine())
+                .setYear(2024)
                 .setHasGPS(true)
                 .build();
 
