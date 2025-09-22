@@ -1,34 +1,30 @@
-package com.example;
+    package com.example;
 
-import com.example.gui.*;
-import com.example.logistics.Logistics;
-import com.example.logistics.RoadLogistics;
-import com.example.logistics.SeaLogistics;
 
-public class Main {
-    public static void main(String[] args) {
-        // ===== Factory Method =====
-        Logistics road = new RoadLogistics();
-        road.planDelivery();
+    import com.example.logistics.*;
 
-        Logistics sea = new SeaLogistics();
-        sea.planDelivery();
+    public class Main {
+        public static void main(String[] args) {
 
-        System.out.println("-----");
+//            RoadFabric
+            LogisticsFactory roadFactory = new RoadLogisticsFactory();
+            Transport roadTransport = roadFactory.createTransport();
+            Packaging roadPackaging = roadFactory.createPackaging();
 
-        // ===== Abstract Factory =====
-        Application app;
+            roadTransport.deliver();
+            roadPackaging.pack();
 
-        // Windows UI
-        GUIFactory winFactory = new WindowsFactory();
-        app = new Application(winFactory);
-        app.paint();
+            System.out.println("--------------------");
 
-        System.out.println("-----");
+//            SeaFabric
+            LogisticsFactory seaFactory = new SeaLogisticsFactory();
+            Transport seaTransport = seaFactory.createTransport();
+            Packaging seaPackaging = seaFactory.createPackaging();
 
-        // MacOS UI
-        GUIFactory macFactory = new MacFactory();
-        app = new Application(macFactory);
-        app.paint();
+            seaTransport.deliver();
+            seaPackaging.pack();
+
+
+
+        }
     }
-}

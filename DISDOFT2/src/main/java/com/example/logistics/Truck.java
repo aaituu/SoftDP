@@ -3,6 +3,6 @@ package com.example.logistics;
 public class Truck implements Transport {
     @Override
     public void deliver() {
-        System.out.println("Доставка по дороге на грузовике.");
+        System.out.println("delivery on Truck");
     }
 }
